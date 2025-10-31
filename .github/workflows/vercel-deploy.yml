@@ -27,5 +27,5 @@ jobs:
         uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }} # create this in repo Settings → Secrets → Actions
-          vercel-args: '--prod'
+          vercel-args: '--prod --yes'
           working-directory: ./
