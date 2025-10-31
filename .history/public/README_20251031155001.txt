@@ -1,0 +1,10 @@
+Add your assets here:
+
+- cinematic-bg.mp4    -> Site-wide looping video background (place an MP4 here)
+- resume.pdf         -> Your resume PDF linked from the Resume button
+- og.png             -> Open Graph image (optional)
+- favicon.ico        -> Favicon (optional)
+
+Then run:
+  npm install
+  npm run dev
