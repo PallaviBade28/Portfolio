@@ -1,4 +1,6 @@
 [![Lint](https://github.com/PallaviBade28/Portfolio/actions/workflows/lint.yml/badge.svg)](https://github.com/PallaviBade28/Portfolio/actions/workflows/lint.yml)
+[![Vercel Deploy](https://github.com/PallaviBade28/Portfolio/actions/workflows/vercel-deploy.yml/badge.svg)](https://github.com/PallaviBade28/Portfolio/actions/workflows/vercel-deploy.yml)
+[![GitHub Pages Deploy](https://github.com/PallaviBade28/Portfolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/PallaviBade28/Portfolio/actions/workflows/deploy.yml)
 
 # Pallavi Bade — Cinematic Portfolio
 
