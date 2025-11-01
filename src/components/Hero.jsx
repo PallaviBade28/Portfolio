@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Suspense } from 'react';
 import { PROFILE } from '../data';
 import { Mail, FileDown, Code2 } from 'lucide-react';
 import Orb from './Orb';
