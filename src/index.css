@@ -2,12 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root { height: 100%; }
-html, body {
+html,
+body,
+#root {
+  height: 100%;
+}
+html,
+body {
   background: #050507;
   color: white;
   scroll-behavior: smooth;
 }
 
 /* smooth section spacing */
-section { scroll-margin-top: 80px; }
+section {
+  scroll-margin-top: 80px;
+}

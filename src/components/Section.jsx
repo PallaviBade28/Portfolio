@@ -1,4 +1,4 @@
-export default function Section({ id, title, children }){
+export default function Section({ id, title, children }) {
   return (
     <section id={id} className="relative py-20">
       <div className="max-w-7xl mx-auto px-6">
@@ -6,5 +6,5 @@ export default function Section({ id, title, children }){
         {children}
       </div>
     </section>
-  )
+  );
 }
