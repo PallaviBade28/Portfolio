@@ -8,7 +8,7 @@ function ModelContent({ url }) {
 }
 
 function Loader() {
-  const { active, progress } = useProgress();
+  const { progress } = useProgress();
   return (
     <Html center>
       <div className="w-36 p-3 rounded-xl bg-black/60 backdrop-blur text-center text-sm">
