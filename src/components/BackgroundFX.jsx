@@ -17,19 +17,8 @@ export default function BackgroundFX() {
       {/* Fallback gradient (always visible) */}
       <div className="absolute inset-0 bg-[radial-gradient(1200px_600px_at_10%_-20%,#2dd4bf22,transparent_60%),radial-gradient(1000px_500px_at_90%_0%,#7b2ff722,transparent_60%),linear-gradient(180deg,#050507,#0a0b12)]" />
 
-      {/* Video (optional). Hidden if it errors. */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        onError={(e) => {
-          e.currentTarget.style.display = 'none'
-        }}
-        className="absolute inset-0 w-full h-full object-cover opacity-35"
-      >
-        <source src="/cinematic-bg.mp4" type="video/mp4" />
-      </video>
+      {/* Decorative animated gradient layer (no video deployed) */}
+      <div className="absolute inset-0 animated-gradient opacity-60 pointer-events-none" />
 
       {/* Particles */}
       <Particles

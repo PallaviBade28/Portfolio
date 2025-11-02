@@ -22,8 +22,10 @@ const mime = {
 
 const server = http.createServer((req, res) => {
   try {
-    let reqPath = decodeURIComponent(new URL(req.url, `http://localhost`).pathname);
-    if (reqPath === '/') reqPath = '/index.html';
+  let reqPath = decodeURIComponent(new URL(req.url, `http://localhost`).pathname);
+  // If build uses a base like /Portfolio/, strip it so files are served from dist/
+  if (reqPath.startsWith('/Portfolio/')) reqPath = reqPath.replace('/Portfolio', '');
+  if (reqPath === '/' || reqPath === '') reqPath = '/index.html';
     const filePath = path.join(base, reqPath);
     if (!filePath.startsWith(base)) {
       res.writeHead(403);

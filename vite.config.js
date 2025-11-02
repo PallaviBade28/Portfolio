@@ -11,6 +11,17 @@ export default defineConfig({
     // production defaults: minify enabled, no sourcemaps
     sourcemap: false,
     minify: true,
+    rollupOptions: {
+      output: {
+        // conservative manualChunks to split large vendor packages
+        manualChunks: {
+          react: ['react', 'react-dom'],
+          r3f: ['@react-three/fiber', '@react-three/drei', 'three'],
+          tsparticles: ['tsparticles', 'react-tsparticles'],
+          ui: ['framer-motion', 'lucide-react']
+        }
+      }
+    }
   },
 
 })
