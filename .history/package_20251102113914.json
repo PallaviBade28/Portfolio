@@ -6,15 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky install",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --max-warnings=0",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\""
   },
   "dependencies": {
     "@react-three/drei": "^9.46.0",
     "@react-three/fiber": "^9.0.0",
     "framer-motion": "^10.14.0",
     "lucide-react": "^0.268.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "react-tsparticles": "^2.10.2",
     "three": "^0.161.0",
     "tsparticles": "^3.9.1"

@@ -1,13 +1,11 @@
-name: Lint
+name: Build and deploy to GitHub Pages
 
 on:
-  pull_request:
   push:
     branches: [ main ]
 
 jobs:
-  lint:
-    name: Prettier & ESLint
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,6 +18,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Cache Vite
+        uses: actions/cache@v4
+        with:
+          path: .vite
+          key: ${{ runner.os }}-vite-${{ hashFiles('**/package-lock.json') }}
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -28,8 +32,13 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - name: Run Prettier (check)
-        run: npx prettier --check "src/**/*.{js,jsx,ts,tsx,json,css,md}"
+      - name: Build
+        env:
+          GH_PAGES: 'true'
+        run: npm run build
 
-      - name: Run ESLint
-        run: npm run lint
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist

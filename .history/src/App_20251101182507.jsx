@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { Github, Linkedin, Mail, Code2, FileDown, MapPin } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Github, Linkedin, Code2, MapPin } from 'lucide-react';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';

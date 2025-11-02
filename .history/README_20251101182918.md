@@ -1,3 +1,5 @@
+[![Lint](https://github.com/PallaviBade28/Portfolio/actions/workflows/lint.yml/badge.svg)](https://github.com/PallaviBade28/Portfolio/actions/workflows/lint.yml)
+
 # Pallavi Bade — Cinematic Portfolio
 
 This is a Vite + React portfolio with Tailwind CSS, Framer Motion, React Three Fiber (R3F) ready, and site-wide looping video background + particles.
