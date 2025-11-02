@@ -8,7 +8,8 @@ server.stderr.on('data', (d) => process.stderr.write(d));
 
 function runCapture() {
   return new Promise((resolve, reject) => {
-    const env = Object.assign({}, process.env, { TARGET_URL: 'http://localhost:4173' });
+  // our build uses base '/Portfolio/' so target the same path locally
+  const env = Object.assign({}, process.env, { TARGET_URL: 'http://localhost:4173/Portfolio/' });
     const child = spawn(process.execPath, [path.join(__dirname, 'collect_console.js')], { env, stdio: 'inherit' });
     child.on('exit', (code) => {
       resolve(code);

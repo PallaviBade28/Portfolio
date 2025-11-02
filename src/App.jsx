@@ -10,6 +10,7 @@ import Achievements from './components/Achievements';
 import Leadership from './components/Leadership';
 import Contact from './components/Contact';
 import BackgroundFX from './components/BackgroundFX';
+import CursorToggle from './components/CursorToggle';
 import { PROFILE } from './data';
 
 export default function App() {
@@ -54,6 +55,7 @@ export default function App() {
               <Code2 className="w-5 h-5" />
             </a>
           </div>
+          <CursorToggle />
         </div>
       </header>
 

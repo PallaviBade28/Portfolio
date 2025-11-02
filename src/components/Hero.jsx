@@ -40,13 +40,13 @@ export default function Hero() {
         <p className="mt-2 text-zinc-400">I build intelligent systems and cinematic web experiences.</p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a href="mailto:112215037@cse.iiitp.ac.in" className="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#7b2ff7] to-[#22d3ee] hover:scale-105 transition inline-flex items-center gap-2">
+          <a href="mailto:112215037@cse.iiitp.ac.in" className="magnetic px-5 py-3 rounded-2xl bg-gradient-to-r from-[#7b2ff7] to-[#22d3ee] hover:scale-105 transition inline-flex items-center gap-2">
             <Mail className="w-4 h-4" /> Contact
           </a>
-          <a href="https://leetcode.com/u/pallavibade28/" target="_blank" rel="noreferrer" className="px-5 py-3 rounded-2xl border border-white/20 hover:bg-white/10 inline-flex items-center gap-2">
+          <a href="https://leetcode.com/u/pallavibade28/" target="_blank" rel="noreferrer" className="magnetic px-5 py-3 rounded-2xl border border-white/20 hover:bg-white/10 inline-flex items-center gap-2">
             <Code2 className="w-4 h-4" /> LeetCode
           </a>
-          <a href="https://www.codechef.com/users/pallavibade28" target="_blank" rel="noreferrer" className="px-5 py-3 rounded-2xl border border-white/20 hover:bg-white/10 inline-flex items-center gap-2">
+          <a href="https://www.codechef.com/users/pallavibade28" target="_blank" rel="noreferrer" className="magnetic px-5 py-3 rounded-2xl border border-white/20 hover:bg-white/10 inline-flex items-center gap-2">
             <ExternalLink className="w-4 h-4" /> CodeChef
           </a>
         </div>

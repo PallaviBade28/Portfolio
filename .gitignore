@@ -17,3 +17,4 @@ public/models/
 # Ignore local diagnostic artifacts created by tools/
 tools/console-output/
 tools/bundle*.js
+gh-pages-clean/

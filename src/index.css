@@ -18,3 +18,93 @@ body {
 section {
   scroll-margin-top: 80px;
 }
+
+/* Theme palette */
+:root{
+  --accent-1: #7b2ff7; /* purple */
+  --accent-2: #f472b6; /* pink */
+  --accent-3: #22d3ee; /* cyan */
+}
+
+/* animated gradient used as cinematic background */
+.animated-gradient{
+  background: linear-gradient(120deg,var(--accent-1),var(--accent-2),var(--accent-3));
+  background-size: 300% 300%;
+  animation: gradient-move 8s ease infinite;
+}
+
+@keyframes gradient-move{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+/* Respect user's reduced motion preference: remove heavy animations and effects */
+@media (prefers-reduced-motion: reduce){
+  .animated-gradient{animation:none}
+  .custom-cursor{display:none !important}
+  .custom-cursor::after{display:none !important}
+  .cursor-indicator.pulse{animation:none}
+  .magnetic{transition:none;will-change:auto}
+}
+
+/* disable halo when html has no-cursor-halo (low memory or narrow viewports) */
+html.no-cursor-halo .custom-cursor::after{display:none !important}
+
+/* Custom cursor */
+.custom-cursor{
+  pointer-events:none;
+  position:fixed;
+  width:14px;height:14px;border-radius:50%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle at 30% 30%,rgba(255,255,255,0.95),rgba(255,255,255,0.6) 30%,rgba(0,0,0,0) 60%);
+  box-shadow:0 4px 18px rgba(123,47,247,0.35),inset 0 1px 0 rgba(255,255,255,0.25);
+  z-index:9999;mix-blend-mode:screen;transition:transform .18s cubic-bezier(.2,.9,.2,1),width .18s, height .18s, background .18s;
+}
+
+/* Hint the browser this will change for GPU compositing */
+.custom-cursor{will-change:transform}
+
+/* only hide native cursor when custom cursor is enabled */
+html.custom-cursor-enabled *{ cursor: none !important; }
+
+/* don't enable on small screens by default */
+@media (max-width: 767px){
+  .custom-cursor{display:none}
+}
+
+/* neon halo / trail for the custom cursor */
+.custom-cursor::after{
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 48px; height: 48px; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 30% 30%, rgba(34,211,238,0.18), rgba(123,47,247,0.06) 50%, rgba(0,0,0,0) 70%);
+  filter: blur(10px);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+/* magnetic element performance hint */
+.magnetic{will-change:transform}
+
+/* magnetic elements slightly attract cursor on hover */
+.magnetic{transition:transform .22s cubic-bezier(.2,.9,.2,1);}
+.magnetic:hover{transform:translateY(-4px) scale(1.03)}
+
+/* cursor indicator inside header toggle */
+.cursor-indicator{display:inline-block;width:10px;height:10px;border-radius:9999px;box-shadow:0 4px 10px rgba(0,0,0,0.4);flex:0 0 auto}
+.cursor-indicator.on{background:linear-gradient(180deg,var(--accent-3),var(--accent-1));}
+.cursor-indicator.off{background:linear-gradient(180deg,#6b7280,#374151);opacity:0.9}
+
+/* one-shot pulse when toggled on */
+.cursor-indicator.pulse{animation:pulse-on .9s cubic-bezier(.2,.9,.2,1)}
+@keyframes pulse-on{
+  0%{transform:scale(1);box-shadow:0 4px 10px rgba(0,0,0,0.4)}
+  40%{transform:scale(1.35);box-shadow:0 8px 28px rgba(123,47,247,0.35)}
+  100%{transform:scale(1);box-shadow:0 4px 10px rgba(0,0,0,0.4)}
+}
+
+.sr-only{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
