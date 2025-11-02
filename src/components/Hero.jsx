@@ -1,28 +1,16 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Float } from '@react-three/drei'
+import React, { Suspense, lazy } from 'react'
 import { motion } from 'framer-motion'
 import { Mail, Code2, ExternalLink } from 'lucide-react'
+
+const Hero3D = lazy(() => import('./Hero3D'))
 
 export default function Hero() {
   return (
     <section id="hero" className="relative h-[90vh] md:h-screen flex items-center justify-center text-center">
-      {/* 3D Canvas */}
-      <Canvas className="absolute inset-0" camera={{ position: [0, 0, 4] }}>
-        <ambientLight intensity={0.7} />
-        <Float speed={2} rotationIntensity={1.2} floatIntensity={1}>
-          <mesh>
-            <torusKnotGeometry args={[1, 0.33, 256, 32]} />
-            <meshStandardMaterial
-              metalness={0.9}
-              roughness={0.15}
-              color="#7b2ff7"
-              emissive="#22d3ee"
-              emissiveIntensity={0.35}
-            />
-          </mesh>
-        </Float>
-        <OrbitControls enableZoom={false} autoRotate autoRotateSpeed={0.7} />
-      </Canvas>
+      {/* Lazy-loaded 3D Canvas: split into its own chunk */}
+      <Suspense fallback={<div className="absolute inset-0 animated-gradient" aria-hidden />}> 
+        <Hero3D />
+      </Suspense>
 
       {/* Text + CTAs */}
       <motion.div
