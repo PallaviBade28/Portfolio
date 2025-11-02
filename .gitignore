@@ -11,3 +11,9 @@ yarn-error.log*
 public/models/
 /*.tgz
 /*.log
+# Ignore editor/extension snapshot/history backups
+.history/
+
+# Ignore local diagnostic artifacts created by tools/
+tools/console-output/
+tools/bundle*.js
