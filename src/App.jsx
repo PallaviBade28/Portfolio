@@ -8,6 +8,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Achievements from './components/Achievements';
 import Leadership from './components/Leadership';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import BackgroundFX from './components/BackgroundFX';
 import CursorToggle from './components/CursorToggle';
@@ -69,6 +70,7 @@ export default function App() {
         <Projects />
         <Skills />
         <Achievements />
+    <Testimonials />
         <Leadership />
         <Contact />
 
